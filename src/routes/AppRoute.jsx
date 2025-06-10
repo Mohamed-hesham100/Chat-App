@@ -6,6 +6,7 @@ import Message from "../components/Message";
 import App from "../App";
 import Chat from "../components/Chat";
 import LogoPage from "../components/LogoPage";
+import PrivateRoute from "../components/PrivateRoute";
 
 export const appRouter = createBrowserRouter([
   {
@@ -14,7 +15,12 @@ export const appRouter = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home />,
+        element: (
+          <PrivateRoute>
+            <Home />
+          </PrivateRoute>
+        ),
+
         children: [
           {
             path: "/",
