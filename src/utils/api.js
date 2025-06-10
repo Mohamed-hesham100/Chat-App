@@ -2,7 +2,7 @@
 import axios from "axios";
 import Cookies from "js-cookie";
 import { useEffect, useState } from "react";
-const apiUrl = import.meta.env.VITE_API_URL;
+const apiUrl = "https://chat-app-production-eae0.up.railway.app";
 
 export const postData = async (url, formData) => {
   try {
@@ -13,7 +13,7 @@ export const postData = async (url, formData) => {
     if (token) {
       headers.Authorization = `Bearer ${token}`;
     }
-    const response = await axios.post(`${apiUrl}${url}`, formData, { headers });
+    const response = await axios.post(apiUrl + url, formData, { headers });
     return response.data;
   } catch (error) {
     if (error.response) {
@@ -28,7 +28,7 @@ export const postData = async (url, formData) => {
 export const fetchDataFromApi = async (url) => {
   try {
     const token = Cookies.get("token");
-    const response = await axios.get(`${apiUrl}${url}`, {
+    const response = await axios.get(apiUrl + url, {
       headers: {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
