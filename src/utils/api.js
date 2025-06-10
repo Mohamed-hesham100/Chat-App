@@ -2,7 +2,7 @@
 import axios from "axios";
 import Cookies from "js-cookie";
 import { useEffect, useState } from "react";
-const apiUrl = "https://chat-app-production-eae0.up.railway.app";
+const apiUrl = "https://chat-app-production-eae0.up.railway.app/api";
 
 export const postData = async (url, formData) => {
   try {
