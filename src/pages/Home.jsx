@@ -34,7 +34,7 @@ const Home = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
 
-    const socket = io("http://localhost:8080", {
+    const socket = io("https://chat-app-production-eae0.up.railway.app", {
       auth: { token },
     });
 
