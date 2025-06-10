@@ -29,7 +29,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
-    const res = await postData("/api/user/login", formData);
+    const res = await postData("/user/login", formData);
     setIsLoading(false);
     if (res.success) {
       toast.success("Login successful");
