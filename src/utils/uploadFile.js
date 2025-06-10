@@ -1,5 +1,5 @@
-const upload_preset = import.meta.env.VITE_UPLOAD_PRESET;
-const cloud_name = import.meta.env.VITE_CLOUD_NAME;
+const upload_preset = "chate_app";
+const cloud_name = "dgulrg3t9";
 
 const uploadFile = async (file, type = "image") => {
   const uploadData = new FormData();
